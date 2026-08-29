@@ -7,6 +7,7 @@ properties() { '
 kernel.string=
 device.support=
 kernel.compiler=
+kernel.made=dantepaulxd
 message.word=
 do.devicecheck=1
 do.modules=0
