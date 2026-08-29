@@ -300,7 +300,7 @@ do_devicecheck() {
   for testname in $(grep '^device.name.*=' anykernel.sh | cut -d= -f2-); do
     for devicename in $device $product $vendordevice $vendorproduct; do
       if [ "$devicename" == "$testname" ]; then
-        ui_print "- Device Supported. !";
+        ui_print " ";
         match=1;
         break 2;
       fi;
@@ -558,12 +558,13 @@ KERNEL_COMPILER="$(file_getprop anykernel.sh kernel.compiler)";
 KERNEL_MADE="$(file_getprop anykernel.sh kernel.made)";
 MESSAGE_WORD="$(file_getprop anykernel.sh message.word)";
 DEVICE_NAME="$(getprop ro.product.device)";
-ui_print "_________________________________________________";
-ui_print "-- Kernel Name    : $KERNEL_STRING";
-ui_print "-- Clang Version  : $KERNEL_COMPILER";
+ui_print "________________________________________";
+ui_print " ";
+ui_print "-- Kernel         : $KERNEL_STRING";
+ui_print "-- Clang          : $KERNEL_COMPILER";
 ui_print "-- Device         : $DEVICE_NAME";
 ui_print "-- Maintainer     : $KERNEL_MADE";
-ui_print "_________________________________________________";
+ui_print "________________________________________";
 
 if [ -f version ]; then
   ui_print " ";
@@ -571,7 +572,7 @@ if [ -f version ]; then
   ui_print " ";
 fi;
 ui_print " ";
-ui_print "- Preparing Environment Setup ...";
+ui_print "- Initial Setup ...";
 grep -oE 'AK_BASE.*' META-INF/com/google/android/updater-script >&2;
 ui_print " ";
 
@@ -582,7 +583,8 @@ do_versioncheck;
 do_levelcheck;
 do_vendorlevelcheck;
 
-ui_print "- Flashing $KERNEL_STRING Kernel...";
+ui_print "- Flashing Kernel...";
+ui_print " ";
 ash anykernel.sh;
 if [ $? != 0 ]; then
   abort;
@@ -598,8 +600,8 @@ if [ "$(file_getprop anykernel.sh do.cleanup)" == 1 ]; then
   cleanup;
 fi;
 
-ui_print "- Done";
-ui_print "_________________________________________________";
+ui_print "- Flashing Completed.";
+ui_print "________________________________________";
 ui_print "$MESSAGE_WORD"
 export PATH="$OLD_PATH";
 unset OLD_PATH OUTFD ZIPFILE;
