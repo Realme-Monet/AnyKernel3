@@ -601,7 +601,8 @@ if [ "$(file_getprop anykernel.sh do.cleanup)" == 1 ]; then
 fi;
 
 ui_print "- Flashing Completed.";
-ui_print "________________________________________";
 ui_print "$MESSAGE_WORD"
+ui_print "________________________________________";
+ui_print " "
 export PATH="$OLD_PATH";
 unset OLD_PATH OUTFD ZIPFILE;
