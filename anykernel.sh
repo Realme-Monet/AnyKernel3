@@ -4,11 +4,11 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=Aether
-device.support=realme C3 C3i 10A 10 6i 20 7i 30A 8i
+kernel.string=AETHER
+device.support=C3 C3i 10A 10 6i 20 7i 30A 8i
 kernel.compiler=r510928
-kernel.made=dantepaulxd
-message.word=
+kernel.made=DP00XD
+message.word=FUCK YOU
 do.devicecheck=1
 do.modules=0
 do.systemless=1
@@ -24,7 +24,7 @@ device.name7=RMX2042
 device.name8=RMX2191
 device.name9=RMX2193
 device.name10=RMX3171
-supported.versions=10.0 - 11.0
+supported.versions=
 supported.patchlevels=
 supported.vendorpatchlevels=
 '; } # end properties
