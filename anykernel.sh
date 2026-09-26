@@ -24,6 +24,7 @@ device.name7=RMX2042
 device.name8=RMX2191
 device.name9=RMX2193
 device.name10=RMX3171
+device.name11=RMX2002
 supported.versions=
 supported.patchlevels=
 supported.vendorpatchlevels=
